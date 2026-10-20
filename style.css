@@ -74,6 +74,76 @@ ol {
     line-height: 1.8;
 }
 
-section {
-    margin-bottom: 30px;
+.deck {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 110px;
+    min-height: 160px;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+.gwent-card {
+    background-color: #6b4a2b;
+    color: white;
+    border-color: goldenrod;
+}
+
+.playing-card {
+    background-color: white;
+    color: black;
+}
+
+.red-card {
+    color: darkred;
+}
+
+.card h3 {
+    font-size: 22px;
+}
+
+.card p {
+    font-size: 18px;
+}
+
+.playing-card p {
+    font-size: 50px;
+    margin: 10px;
+}
+
+/* game tables */
+
+.game-table {
+    background-color: #3b2920;
+    border: 2px solid darkgoldenrod;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.game-row {
+    background-color: #4a3528;
+    border: 1px solid goldenrod;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.game-row h4 {
+    color: gold;
+}
+
+.game-table h3 {
+    color: goldenrod;
+}
+
+.game-table hr {
+    margin: 30px 0;
+}
+.playing-card h3 {
+    color: black;
 }
