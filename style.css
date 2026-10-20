@@ -1,23 +1,38 @@
+/* website colors */
+
+:root {
+    --background-color: #241b18;
+    --header-color: #422a20;
+    --nav-color: #5a3326;
+    --panel-color: #3b2920;
+    --row-color: #4a3528;
+    --gwent-color: #6b4a2b;
+    --text-color: white;
+    --title-color: goldenrod;
+    --border-color: darkgoldenrod;
+}
+
+/* basic styling */
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #241b18;
-    color: white;
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
 }
 
 header {
-    background-color: #422a20;
+    background-color: var(--header-color);
     text-align: center;
     padding: 25px;
 }
 
 header h1 {
-    color: goldenrod;
+    color: var(--title-color);
 }
 
 nav {
-    background-color: #5a3326;
+    background-color: var(--nav-color);
     text-align: center;
     padding: 15px;
 }
@@ -32,6 +47,12 @@ nav a:hover {
     color: gold;
 }
 
+nav a:focus-visible,
+.game-card a:focus-visible {
+    outline: 2px solid gold;
+    outline-offset: 4px;
+}
+
 main {
     padding: 20px;
 }
@@ -41,8 +62,20 @@ section {
 }
 
 h2 {
-    color: goldenrod;
+    color: var(--title-color);
 }
+
+footer {
+    background-color: var(--header-color);
+    text-align: center;
+    padding: 15px;
+}
+
+ol {
+    line-height: 1.8;
+}
+
+/* home and lobby page */
 
 .games {
     display: flex;
@@ -50,10 +83,12 @@ h2 {
 }
 
 .game-card {
-    background-color: #3b2920;
-    border: 2px solid darkgoldenrod;
+    background-color: var(--panel-color);
+    border: 2px solid var(--border-color);
     padding: 20px;
     flex: 1;
+    min-width: 0;
+    animation: show-games 0.6s ease-out;
 }
 
 .game-card h3 {
@@ -62,17 +97,12 @@ h2 {
 
 .game-card a {
     color: orange;
+    display: inline-block;
+    margin-right: 15px;
+    margin-top: 10px;
 }
 
-footer {
-    background-color: #422a20;
-    text-align: center;
-    padding: 15px;
-}
-
-ol {
-    line-height: 1.8;
-}
+/* cards */
 
 .deck {
     display: flex;
@@ -87,12 +117,13 @@ ol {
     border-radius: 8px;
     padding: 10px;
     text-align: center;
+    transition: transform 0.3s ease;
 }
 
 .gwent-card {
-    background-color: #6b4a2b;
+    background-color: var(--gwent-color);
     color: white;
-    border-color: goldenrod;
+    border-color: var(--title-color);
 }
 
 .playing-card {
@@ -117,18 +148,35 @@ ol {
     margin: 10px;
 }
 
-/* game tables */
+.playing-card h3 {
+    color: black;
+}
+
+.playing-card.red-card h3 {
+    color: darkred;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.card:focus-visible {
+    outline: 3px solid gold;
+    transform: translateY(-10px) scale(1.05);
+}
+
+/* game table */
 
 .game-table {
-    background-color: #3b2920;
-    border: 2px solid darkgoldenrod;
+    background-color: var(--panel-color);
+    border: 2px solid var(--border-color);
     padding: 20px;
     margin-top: 15px;
 }
 
 .game-row {
-    background-color: #4a3528;
-    border: 1px solid goldenrod;
+    background-color: var(--row-color);
+    border: 1px solid var(--title-color);
     padding: 15px;
     margin-bottom: 10px;
 }
@@ -138,12 +186,258 @@ ol {
 }
 
 .game-table h3 {
-    color: goldenrod;
+    color: var(--title-color);
 }
 
 .game-table hr {
     margin: 30px 0;
 }
-.playing-card h3 {
+
+/* black cards get black, red cards get red */
+.game-table .playing-card h3 {
     color: black;
+}
+
+.game-table .playing-card.red-card h3 {
+    color: darkred;
+}
+
+/* flip effect for highcard */
+
+.flip-check {
+    position: absolute;
+    opacity: 0;
+}
+
+.flip-card {
+    width: 130px;
+    height: 180px;
+    position: relative;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+}
+
+.card-back {
+    background-color: var(--gwent-color);
+    color: gold;
+    border-color: var(--title-color);
+}
+
+.card-front {
+    background-color: white;
+    color: black;
+    transform: rotateY(180deg);
+}
+
+.card-front.red-card {
+    color: darkred;
+}
+
+.flip-check:checked + .flip-card {
+    transform: rotateY(180deg);
+}
+
+.flip-check:focus-visible + .flip-card {
+    outline: 3px solid gold;
+    outline-offset: 4px;
+}
+
+/* gwent current info */
+
+.player-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.player-info div {
+    background-color: var(--row-color);
+    border: 1px solid var(--title-color);
+    padding: 10px;
+}
+
+.player-info .current-turn {
+    border: 3px solid var(--title-color);
+    padding: 20px;
+    min-height: 100px;
+    animation: turn-glow 2s infinite;
+}
+
+/* gwent, deck */
+
+.deck-stack {
+    width: 110px;
+    height: 160px;
+    background-color: var(--header-color);
+    border: 3px solid var(--title-color);
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 0px var(--gwent-color),
+                10px 10px 0px var(--title-color);
+    margin-bottom: 30px;
+    animation: show-deck 0.7s ease-out;
+}
+
+.deck-stack p {
+    color: gold;
+    font-weight: bold;
+}
+
+.deck-stack:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 14px;
+}
+
+/* gwent, state of cards */
+
+.selected-card {
+    border: 4px solid gold;
+    background-color: #8b632d;
+}
+
+.used-card {
+    opacity: 0.4;
+    filter: grayscale(100%);
+}
+
+.used-card:hover {
+    transform: none;
+}
+
+/* team style */
+
+.team-member {
+    background-color: var(--panel-color);
+    border: 2px solid var(--border-color);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.team-member h3 {
+    color: gold;
+}
+
+.team-member li {
+    margin-bottom: 10px;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.time-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.time-table th,
+.time-table td {
+    border: 1px solid var(--title-color);
+    padding: 10px;
+    text-align: left;
+}
+
+.time-table th {
+    background-color: var(--nav-color);
+}
+
+/* keyframes */
+
+@keyframes show-games {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes show-deck {
+    from {
+        opacity: 0;
+        transform: translateX(-12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes turn-glow {
+    0% {
+        background-color: var(--row-color);
+        border-color: var(--title-color);
+        box-shadow: 0 0 0px gold;
+    }
+    50% {
+        background-color: #76501e;
+        border-color: yellow;
+        box-shadow: 0 0 20px gold;
+    }
+    100% {
+        background-color: var(--row-color);
+        border-color: var(--title-color);
+        box-shadow: 0 0 0px gold;
+    }
+}
+
+/* mobile requirement */
+
+@media (max-width: 600px) {
+    .games {
+        flex-direction: column;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    .game-table {
+        padding: 10px;
+    }
+
+    .game-row {
+        padding: 10px;
+    }
+
+    .player-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* reduced motion requirement */
+
+@media (prefers-reduced-motion: reduce) {
+    .card, .flip-card {
+        transition: none;
+    }
+
+    .game-card,
+    .deck-stack,
+    .player-info .current-turn {
+        animation: none;
+    }
 }
