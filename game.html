@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Table</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>The Haunted Tavern</h1>
+        <p>Project 1</p>
+        <p>Joe Turner, Shozab Mirza</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="lobby.html">Lobby</a>
+        <a href="decks.html">Card Decks</a>
+        <a href="rules.html">Rules</a>
+        <a href="game.html">Game Table</a>
+    </nav>
+
+    <main>
+        <h2>Game Table</h2>
+        <p>
+            Here are examples of what the different
+            card games look like when playing.
+        </p>
+
+        <section id="gwent">
+            <h2>Gwent Table</h2>
+            <p>
+                Gwent uses three rows for each player.
+                Each row holds a different type of card.
+            </p>
+
+            <div class="game-table">
+
+                <h3>Opponent</h3>
+                <p>Score: 12</p>
+
+                <div class="game-row">
+                    <h4>Siege</h4>
+                    <div class="card gwent-card">
+                        <h3>Catapult</h3>
+                        <p>8 Points</p>
+                    </div>
+                </div>
+
+                <div class="game-row">
+                    <h4>Ranged</h4>
+                    <div class="card gwent-card">
+                        <h3>Archer</h3>
+                        <p>4 Points</p>
+                    </div>
+                </div>
+
+                <div class="game-row">
+                    <h4>Close Range</h4>
+                    <p>No cards played</p>
+                </div>
+
+                <hr>
+
+                <h3>Player</h3>
+                <p>Score: 9</p>
+                <p>Current Turn: Player</p>
+
+                <div class="game-row">
+                    <h4>Close Range</h4>
+                    <div class="card gwent-card">
+                        <h3>Soldier</h3>
+                        <p>5 Points</p>
+                    </div>
+                </div>
+
+                <div class="game-row">
+                    <h4>Ranged</h4>
+                    <div class="card gwent-card">
+                        <h3>Archer</h3>
+                        <p>4 Points</p>
+                    </div>
+                </div>
+
+                <div class="game-row">
+                    <h4>Siege</h4>
+                    <p>No cards played</p>
+                </div>
+
+                <h3>Player Hand</h3>
+
+                <div class="deck">
+                    <div class="card gwent-card">
+                        <h3>Soldier</h3>
+                        <p>5 Points</p>
+                    </div>
+
+                    <div class="card gwent-card">
+                        <h3>Catapult</h3>
+                        <p>8 Points</p>
+                    </div>
+
+                    <div class="card gwent-card">
+                        <h3>Clear Weather</h3>
+                        <p>Special Card</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="highcard">
+            <h2>High Card Table</h2>
+            <p>
+                Each player draws one card.
+                The highest card wins the round.
+            </p>
+
+            <div class="game-table">
+
+                <h3>Player 1</h3>
+
+                <div class="deck">
+                    <div class="card playing-card">
+                        <h3>A</h3>
+                        <p>♠</p>
+                    </div>
+                </div>
+
+                <h3>Player 2</h3>
+
+                <div class="deck">
+                    <div class="card playing-card red-card">
+                        <h3>K</h3>
+                        <p>♥</p>
+                    </div>
+                </div>
+
+                <p>Winner: Player 1</p>
+
+            </div>
+        </section>
+
+        <section id="blackjack">
+            <h2>Blackjack Table</h2>
+            <p>
+                Try to get as close to 21 as possible
+                without going over.
+            </p>
+
+            <div class="game-table">
+
+                <h3>Dealer</h3>
+                <p>Score: 17</p>
+
+                <div class="deck">
+                    <div class="card playing-card">
+                        <h3>10</h3>
+                        <p>♠</p>
+                    </div>
+
+                    <div class="card playing-card red-card">
+                        <h3>7</h3>
+                        <p>♥</p>
+                    </div>
+                </div>
+
+                <h3>Player</h3>
+                <p>Score: 20</p>
+
+                <div class="deck">
+                    <div class="card playing-card">
+                        <h3>K</h3>
+                        <p>♣</p>
+                    </div>
+
+                    <div class="card playing-card red-card">
+                        <h3>Q</h3>
+                        <p>♦</p>
+                    </div>
+                </div>
+
+                <p>Winner: Player</p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>CSC 4370 - Card Gaming Hub Project 1</p>
+    </footer>
+
+</body>
+</html>
