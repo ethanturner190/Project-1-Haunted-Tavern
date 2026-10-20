@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Rules</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>The Haunted Tavern</h1>
+        <p>Project 1</p>
+        <p>Joe Turner, Shozab Mirza</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="lobby.html">Lobby</a>
+        <a href="decks.html">Card Decks</a>
+        <a href="rules.html">Rules</a>
+        <a href="game.html">Game Table</a>
+    </nav>
+
+    <main>
+        <h2>Game Rules</h2>
+        <p>How to play each game.</p>
+
+        <section id="gwent">
+            <h2>Gwent</h2>
+            <p>
+                A strategy card game where two
+                players play cards to the table. 
+                Each card has a value that stacks
+                with other the other friendly cards 
+                played. Highest amount of points at the end 
+                of the round wins the round. The first 
+                player to win two rounds wins the game.
+                (Uses a custom deck of cards, not standard 52)
+            </p>
+            <p>
+                The table has 3 rows per player that represent 
+                close, medium and far range. Each unit card fits 
+                into one of these ranges. There are special cards
+                that have abilities such as doubling the amount of 
+                points each card is worth on a row. The round 
+                keeps going until both players run out of cards 
+                or both players pass. When a player passes they will
+                not be able to play anymore cards that round.
+            </p>
+
+            <h3>How to Play</h3>
+            <ol>
+                <li>Each player starts with a hand of 10 cards.</li>
+                <li>Players take turns playing cards on the table one at a time.</li>
+                <li>Each card has a value that adds up to other cards.</li>
+                <li>Players can pass when they do not want to play more cards.</li>
+                <li>The player with the most points wins the round.</li>
+                <li>The first player to win two rounds wins the game.</li>
+            </ol>
+
+            <h3>Strategy</h3>
+            <p>
+                Don't play every card the first round without reason. 
+                Having more cards than the other player gives you an advantage. 
+                Sometimes it is better to lose one round rather than play all 
+                your cards. 
+            </p>
+        </section>
+
+        <section id="highcard">
+            <h2>High Card</h2>
+            <p>
+                Very simple game. Two players draw a card and play them.
+                The player with the highest card wins the round. 
+            </p>
+
+            <h3>How to Play</h3>
+            <ol>
+                <li>Each player draws one card from a standard 52 card deck.</li>
+                <li>The player with the higher card wins.</li>
+                <li>If both cards have the same value each player draws again.</li>
+            </ol>
+
+            <h3>Card Values</h3>
+            <p>
+                Number cards are worth their number.
+                Jack is 11, Queen is 12, King is 13
+                and Ace is 14.
+            </p>
+        </section>
+
+        <section id="blackjack">
+            <h2>Blackjack</h2>
+            <p>
+                Blackjack is a game where the dealer is playing 
+                every other player independently, but at the 
+                same time. Each player wants their cards to add 
+                to 21 but without going over. Each player's cards
+                are visible to everyone else. One of the dealer's 
+                cards is hidden.  
+            </p>
+
+            <h3>How to Play</h3>
+            <ol>
+                <li>The player and dealer each start with two cards.</li>
+                <li>Both player cards are known and the dealer hides one.</li>
+                <li>The player can hit to get another card.</li>
+                <li>The player can stand to keep their current hand.</li>
+                <li>Going over 21 means the player loses.</li>
+                <li>The hand closest to 21 wins.</li>
+                <li>The dealer will draw a card until they at least hold 17.</li>
+                <li>An equal score will result in a tie</li>
+            </ol>
+
+            <h3>Card Values</h3>
+            <p>
+                Number cards are worth their number.
+                Jack, Queen, and King are worth 10.
+                Ace can be worth 1 or 11.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>CSC 4370 - Card Gaming Hub Project 1</p>
+    </footer>
+
+</body>
+</html>
