@@ -48,3 +48,11 @@ We used trello to make keep up with task. During our standup meeting we would ta
 ## Development Journal
 
 [View Development Journal](journal.md)
+
+## QA Testing
+
+[View Development Journal](QA_Testing.md)
+
+## Credits
+
+[View Credits](CREDITS.md)
